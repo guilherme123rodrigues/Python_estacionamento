@@ -1,4 +1,5 @@
 from meus_projetos.estacionamento.status_de_tela_005 import  atualiza
+from meus_projetos.estacionamento.preço_07 import tab
 from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
@@ -6,8 +7,8 @@ from time import sleep
 
 console = Console()
 
-def calculo():
-    e = 9
+def calculo(dia):
+    e = 8
     v_h = 1.5
     console.print(Panel(f"Hora de entrada: \t{e} hrs.\n"
                         f"Hara da saída:\t\t{datetime.now().hour} hrs.\n"

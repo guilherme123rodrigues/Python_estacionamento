@@ -3,27 +3,11 @@ from time import sleep
 from meus_projetos.estacionamento.menu_002 import painel
 from meus_projetos.estacionamento.status_de_tela_005 import atualiza
 from meus_projetos.estacionamento.verificação_003 import vagas, veiculo
+from meus_projetos.estacionamento.preço_07 import tab
+from meus_projetos.estacionamento.atualizar_vagas_08 import vaga, atualizar_vaga
+from meus_projetos.estacionamento.salve_veiculo_004 import salvar
 
 console = Console()
-
-def vaga():
-    try:
-        with open("vaga.txt", "r") as v:
-            for c in v:
-                vag = int(c)
-            return vag
-    except FileNotFoundError:
-        pass
-    else:
-        vag = 10
-        return vag
-
-
-def atualizar_vaga(atualizar):
-    with open("vaga.txt", "w") as v:
-        v.write(f"{atualizar}")
-
-
 
 while True:
     resp = painel()
@@ -38,7 +22,16 @@ while True:
                     vag -= 1
                     atualizar_vaga(vag)
                     vaga()
-                    atualiza(":white_check_mark:  Veiculo cadastrado com sucesso!")
+                    console.print('-'*50)
+                    cpf = console.input('CPF do titúlar: ')
+                    placa = console.input('Placa do veículo: ')
+                    cor = console.input('Cor do veículo: ')
+                    console.print('-' * 50)
+                    placa1 = placa[:5]
+                    placa2 = '-' + placa[5:]
+                    placa3 = placa1 + placa2
+
+                    salvar([cpf, placa3, cor])
                 case '2':
                     atualiza(":no_entry:  Encerrando cadastro")
 
@@ -52,10 +45,14 @@ while True:
         case '3':
             atualiza(f"Um momento...")
             sleep(3.5)
+            console.print('-'*50)
+            tab()
+            console.print('-'*50)
+            sleep(4)
         case '4':
             atualiza("Saindo")
             sleep(1.5)
             break
         case _:
             atualiza(':-1: Opção inválido. Tente novamente!', 'red')
-            sleep(2.5)
+            sleep(1)
