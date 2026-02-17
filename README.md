@@ -18,8 +18,6 @@ Funcionalidades do Sistema
       ° Ex.: [Seg. à Sex. = 1.50 a hora], [Sábados e domingo = 3.50 a hora], [Feriados = 5.50 a hora]
     
   * Baseado no tempo de permanência
-      °'Aqui nessa parte, só consigo pegar a hora, não os minutos
-      ° Ex.: 14:10; 09:10 <-- 14; 09, só pego os dois primeiro.
     
   * Consulta da tabela de preços
 elatórios
