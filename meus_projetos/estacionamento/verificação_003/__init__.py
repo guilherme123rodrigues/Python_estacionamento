@@ -4,7 +4,7 @@ from rich.console import Console
 from rich.panel import Panel
 from time import sleep
 from meus_projetos.estacionamento.status_de_tela_005 import atualiza
-from meus_projetos.estacionamento.pgto_06 import calculo
+from meus_projetos.estacionamento.pgto_006 import calculo
 
 console = Console()
 
@@ -31,17 +31,3 @@ def vagas(v):
                 atualiza(":-1: Opção inválido. Tente novamente!", 'red')
             sleep(2.5)
         return r
-
-
-def veiculo(v):
-    if v == 10:
-        atualiza(":no_entry: Não a veículo no estacionamento!", 'yellow')
-        r = False
-        sleep(2.5)
-    else:
-        atualiza(f"Calculando valor do estacionamento...", 'blue')
-        sleep(2.5)
-        calculo()
-        r = True
-    return r
-

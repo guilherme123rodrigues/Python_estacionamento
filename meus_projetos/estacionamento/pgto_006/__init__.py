@@ -1,5 +1,5 @@
-from meus_projetos.estacionamento.status_de_tela_005 import  atualiza
-from meus_projetos.estacionamento.preço_07 import tab
+from meus_projetos.estacionamento.status_de_tela_005 import atualiza
+from meus_projetos.estacionamento.preço_007 import tab
 from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
@@ -7,12 +7,14 @@ from time import sleep
 
 console = Console()
 
-def calculo(dia):
-    e = 8
+def calculo(hora):
+    atualiza(f"Calculando valor do estacionamento...", 'blue')
+    sleep(2.5)
+    e = hora
     v_h = 1.5
     console.print(Panel(f"Hora de entrada: \t{e} hrs.\n"
                         f"Hara da saída:\t\t{datetime.now().hour} hrs.\n"
-                        "Valor da hora:\t\tR$ 1,50\n"
+                        f"Valor da hora:\t\tR$ {v_h}\n"
                         f"Horas estacionado:\t{datetime.now().hour - e} hrs.\n"
                         f"Total:\t\t\tR${(datetime.now().hour - e) * v_h}", width=45, title="Análise"))
     console.print('-'*50)
