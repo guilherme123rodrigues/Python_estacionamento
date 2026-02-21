@@ -20,5 +20,4 @@ Funcionalidades do Sistema
   * Baseado no tempo de permanência
     
   * Consulta da tabela de preços
-elatórios
 
